@@ -9,7 +9,7 @@
 3. ใช้ `plate` เป็นทั้ง `gps_id` และ `plate_master` เพราะ API ไม่มี device/unit id แยกต่างหาก
 4. เวลาที่ได้เป็นเวลาไทยอยู่แล้ว (ยืนยันแล้วตอนทดสอบ) → ไม่ต้องบวกชั่วโมง (`TIME_OFFSET_HOURS = 0`)
 5. status ('หยุด'/'วิ่ง') คำนวณจาก `speed == 0` ไม่ใช้ข้อความ status จาก thaitracking (เช่น `"วิ่งปกติ"`) เพื่อให้ตรงกับ format เดียวกับ vendor อื่น
-6. POST เข้า `https://backend-tdm-qa.onrender.com/gpsdata` (`gps_vendor: "thaitracking"`, `plate_type: "H"`)
+6. POST เข้า `https://backend-tdm.onrender.com/gpsdata` (`gps_vendor: "thaitracking"`, `plate_type: "H"`)
 
 ## Run local
 

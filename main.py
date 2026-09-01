@@ -13,7 +13,7 @@ log = logging.getLogger(__name__)
 
 # ── Config ────────────────────────────────────────────────────────────
 THAITRACKING_URL = 'https://wlittt.com:8033/Realtime/menatran/menatran'
-BACKEND_URL       = 'https://backend-tdm-qa.onrender.com/gpsdata'
+BACKEND_URL       = 'https://backend-tdm.onrender.com/gpsdata'
 
 PLATE_TYPE = 'H'
 GPS_VENDOR = 'thaitracking'
