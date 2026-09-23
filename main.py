@@ -66,6 +66,14 @@ def fetch_gps(username: str, password: str) -> list:
     return records
 
 
+def _speed_kmh(v):
+    """speed → int km/h; ค่าว่าง/อ่านไม่ได้ → None (ไม่ทำให้ทั้งรอบพัง)"""
+    try:
+        return int(round(float(v)))
+    except (TypeError, ValueError):
+        return None
+
+
 def build_payload(records: list) -> list:
     payload = []
     for r in records:
@@ -87,6 +95,7 @@ def build_payload(records: list) -> list:
             'current_latlng': f'{lat},{lng}' if lat not in (None, '') and lng not in (None, '') else '',
             'gps_updated_at': _to_bkk(r.get('gps_datetime')),
             'status'        : 'หยุด' if is_stopped else 'วิ่ง',
+            'speed'         : _speed_kmh(speed),                    # km/h
         })
     return payload
 
